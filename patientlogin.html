@@ -1,34 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patient Login</title>
-<link rel="stylesheet" href="patientlogin.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination Information</title>
+    <link rel="stylesheet" href="css/patient_dashborad.css">
+    <script src="https://kit.fontawesome.com/f9dc94ec3b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-  <img src="img/logo.jpg" alt="Logo" class="logo">
-    <h1>Patient Login</h1>
-    <form>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter username" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
-      <div class="form-group">
-        <label><input type="checkbox"> Remember me</label>
-        <a href="#" class="forgot-password">Forgot Password?</a>
-      </div>
-      <button type="submit" class="login-btn">Login</button>
-      <p>Powered by: Group 05 <br> (NSBM Undergraduates)</p>
-    </form>
-    <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+  
+  <div class="menu">
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
   </div>
+  <div class="content">
+      <!-- Your content goes here -->
+  </div>
+    <div class="container">
+        <h1>Patient Information</h1>
+        <div class="personal-info">
+            <label for="name">Name:</label>
+            <p id="name">John Doe</p>
+        </div>
+        <div class="personal-info">
+            <label for="dob">Date of Birth:</label>
+            <p id="dob">January 1, 1980</p>
+        </div>
+        <div class="personal-info">
+            <label for="address">Address:</label>
+            <p id="address">123 Main St, Cityville, USA</p>
+        </div>
+        <div class="personal-info">
+            <label for="email">Email:</label>
+            <p id="email">john.doe@example.com</p>
+        </div>
+        <div class="personal-info">
+            <label for="phone">Phone:</label>
+            <p id="phone">+1 234-567-8901</p>
+        </div>
+        <div class="personal-info">
+            <label for="vaccine">Vaccine:</label>
+            <p id="vaccine">Pfizer-BioNTech</p>
+        </div>
+        <div class="personal-info">
+            <label for="date">Date of Vaccination:</label>
+            <p id="date">February 15, 2024</p>
+        </div>
+    </div>
+    <div class="container">
+      <h1>Gardian Information</h1>
+      <div class="personal-info">
+          <label for="name">Name:</label>
+          <p id="name">John Doe</p>
+      </div>
+      <div class="personal-info">
+          <label for="dob">Date of Birth:</label>
+          <p id="dob">January 1, 1980</p>
+      </div>
+      <div class="personal-info">
+          <label for="address">Address:</label>
+          <p id="address">123 Main St, Cityville, USA</p>
+      </div>
+      <div class="personal-info">
+          <label for="email">Email:</label>
+          <p id="email">john.doe@example.com</p>
+      </div>
+      <div class="personal-info">
+          <label for="phone">Phone:</label>
+          <p id="phone">+1 234-567-8901</p>
+      </div>
+      <div class="personal-info">
+          <label for="vaccine">Vaccine:</label>
+          <p id="vaccine">Pfizer-BioNTech</p>
+      </div>
+      <div class="personal-info">
+          <label for="date">Date of Vaccination:</label>
+          <p id="date">February 15, 2024</p>
+      </div>
+  </div>
+  <script src="js/menu.js"></script>
 </body>
 </html>
