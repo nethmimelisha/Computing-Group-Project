@@ -11,6 +11,50 @@ body {
   justify-content: center;
   align-items: center;
 }
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #0c0c0c;
+  padding: 10px 20px;
+  cursor: pointer;
+  
+  }
+  
+  .menu {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 75%;
+  background-color: #07415a;
+  transition: left 0.3s ease;
+  z-index: 9999;
+  }
+  
+  
+  .menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 50%;
+  }
+  
+  .menu ul li {
+  padding: 10px 20px;
+  margin: 10px;
+  }
+  
+  .menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  }
+  .menu-icon {
+  color: #0e0e0e; 
+  }
+  .menu-icon.active {
+  color: #ebe1e1; 
+  }
+  
   
   .container {
     max-width: 500px 20px;

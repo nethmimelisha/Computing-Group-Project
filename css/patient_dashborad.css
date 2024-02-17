@@ -47,9 +47,8 @@ display: block;
 color: #0e0e0e; 
 }
 .menu-icon.active {
-color: #ebe1e1; /* Change this to your desired color */
+color: #ebe1e1; 
 }
-
 
 .container {
 max-width: 600px;
