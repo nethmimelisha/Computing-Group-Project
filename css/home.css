@@ -33,3 +33,20 @@ body, html {
 .logo {
     width: 150px; 
 }
+
+h1 {
+    color:rgb(0, 0, 0);
+    font-size: 32px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.get-started-btn {
+    background-color: #c9d8e9;
+    color: rgb(22, 53, 120);
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
