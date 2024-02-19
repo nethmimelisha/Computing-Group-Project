@@ -245,3 +245,63 @@ body {
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
+
+.card.hospital {
+  background-color: rgb(141, 187, 204);
+}
+
+.card.appointments {
+  background-color: rgb(255, 224, 229);
+}
+
+.card.vaccination {
+  background-color: rgb(246, 246, 174);
+}
+
+.card.patient {
+  background-color: rgb(179, 245, 179);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 200;
+  font-size: 1.9rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.card.hospital .cardName {
+  color: var(--blue);
+}
+
+.card.appointments .cardName {
+  color: var(--pink);
+}
+
+.card.vaccination .cardName {
+  color: var(--yellow);
+}
+
+.card.patient .cardName {
+  color: var(--green);
+}
+
+.cardBox .card.card.hospital:hover {
+  background-color: rgb(92, 149, 170);
+}
+
+.cardBox .card.card.appointments:hover {
+  background-color: rgb(234, 148, 163);
+}
+
+.cardBox .card.card.vaccination:hover {
+  background-color: rgb(237, 237, 100);
+}
+
+.cardBox .card.card.patient:hover {
+  background-color: rgb(131, 220, 131);
+}
