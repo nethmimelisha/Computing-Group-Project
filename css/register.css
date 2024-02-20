@@ -386,3 +386,15 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.patient-registration .form-group {
+  flex: 0 0 calc(50% - 10px);
+  margin-bottom: 15px;
+}
+
+.patient-registration label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
