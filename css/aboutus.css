@@ -15,3 +15,32 @@
     margin:auto;
     line-height:50px;
 }
+.sub-container{
+    max-width:  1200px;
+    margin: auto;
+    padding: 48px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.teams{
+    margin: 10px;
+    padding: 22px;
+    max-width: 30%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.teams:hover{
+    background:#ddd;
+    border-radius: 12px;
+}
+.teams img{
+    width: 200px;
+    height: 200px;
+}
+.name{
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
