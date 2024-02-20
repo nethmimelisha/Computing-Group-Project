@@ -25,7 +25,7 @@ body {
   position: fixed;
   left: -250px;
   width: 250px;
-  height: 75%;
+  height: 85%;
   background-color: #07415a;
   transition: left 0.3s ease;
   z-index: 9999;

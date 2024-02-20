@@ -8,10 +8,11 @@ body {
   background-position: center;
   overflow: hidden;
 }
+
 .container {
   max-width: 330px;
   margin: 150px auto 50px ;
-  margin-left: 65px;
+  margin-left: 15%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 15px;
@@ -22,12 +23,7 @@ body {
   height: 430px;
   background-color:#e7e7e7;
   opacity: 0.9; 
-  
-
-  
-  
-
-  }
+}
 
 .logo {
  width: 100px;
