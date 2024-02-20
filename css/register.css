@@ -367,3 +367,131 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.patient-registration h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.patient-registration h5 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.patient-registration .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.patient-registration .form-group {
+  flex: 0 0 calc(50% - 10px);
+  margin-bottom: 15px;
+}
+
+.patient-registration label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.patient-registration input[type="text"],
+.patient-registration input[type="date"],
+.patient-registration input[type="email"],
+.patient-registration input[type="tel"],
+.patient-registration select,
+.patient-registration textarea {
+    width: calc(100% - 50px);;
+    padding: 10px;
+    border: 2px solid #71b6d4;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.patient-registration textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.patient-registration button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.patient-registration button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
