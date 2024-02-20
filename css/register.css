@@ -398,3 +398,18 @@ body {
   margin-bottom: 5px;
   color: #666;
 }
+
+.patient-registration input[type="text"],
+.patient-registration input[type="date"],
+.patient-registration input[type="email"],
+.patient-registration input[type="tel"],
+.patient-registration select,
+.patient-registration textarea {
+    width: calc(100% - 50px);;
+    padding: 10px;
+    border: 2px solid #71b6d4;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
