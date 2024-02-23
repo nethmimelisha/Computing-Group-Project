@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+}
+
+.dashboard {
+  background-color: #99E2DD;
+  color: #fff;
+  padding: 20px;
+  width: 200px
+  
+  
+}
+
+.dashboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard ul li {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 80px;
+  
+}
+
+.dashboard ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.user-icon {
+  top: 20px;
+  right: 20px; 
+  width: 50px;
+  height: 50px;
+  background-color: #fff; 
+  position: fixed;
+}
+
+.content {
+  padding: 20px;
+  flex: 1;
+  background-color: #f0f0f0; 
+  
+ 
+}
+
+
+
+h2 {
+  color: #333;
+ 
+}
+
+h3 {
+  color: #333;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+  width: calc(100% - 160px);
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  height: 30px;
+}
+
+select {
+  height: 34px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
