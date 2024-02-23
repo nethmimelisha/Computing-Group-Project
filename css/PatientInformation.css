@@ -111,18 +111,18 @@ th {
 }
 
 .dashboard-logo {
-  width: 200px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 200px; 
+  height: auto; 
   opacity: 0.8;
   border-radius: 20px;
 }
 button-container {
-  text-align: center; /* Align buttons to the center */
+  text-align: center; 
  
 }
 
 .button-container button {
-  margin: 0 10px; /* Add space between buttons */
+  margin: 0 10px; 
   border-radius: 20px;
   padding: 10px 20px;
 }
@@ -132,23 +132,23 @@ button-container {
 }
 
 body, input, select, textarea, button {
-  font-weight: bold; /* Make all text bold */
+  font-weight: bold; 
 }
 
 .button-container button:nth-of-type(1) {
-  background-color: #ff6347; /* Coral */
-  color: #fff; /* White text */
+  background-color: #ff6347; 
+  color: #fff; 
 }
 
-/* Button 2 */
+
 .button-container button:nth-of-type(2) {
-  background-color: #6495ed; /* Cornflower Blue */
-  color: #fff; /* White text */
+  background-color: #6495ed; 
+  color: #fff; 
 }
 
-/* Button 3 */
+
 .button-container button:nth-of-type(3) {
-  background-color: #ffd700; /* Gold */
-  color: #333; /* Dark text */
+  background-color: #ffd700; 
+  color: #333; 
 }
 
