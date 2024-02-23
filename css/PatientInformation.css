@@ -5,12 +5,11 @@ body {
 }
 
 .dashboard {
-  background-color: #99E2DD;
+  background-color: #0F3559;
   color: #fff;
   padding: 20px;
-  width: 200px
-  
-  
+  width: 200px;
+  text-align: center;
 }
 
 .dashboard ul {
@@ -22,7 +21,6 @@ body {
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 80px;
-  
 }
 
 .dashboard ul li a {
@@ -32,30 +30,31 @@ body {
 
 .user-icon {
   top: 20px;
-  right: 20px; 
+  right: 20px;
   width: 50px;
   height: 50px;
-  background-color: #fff; 
+  background-color: #fff;
   position: fixed;
+  background-image: url("Asiri_Hospital_Holdings_logo.png"); 
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 50%; 
+  
 }
+
 
 .content {
   padding: 20px;
   flex: 1;
-  background-color: #f0f0f0; 
-  
- 
+  background-color: #f0f0f0;
 }
-
-
 
 h2 {
   color: #333;
- 
 }
 
 h3 {
-  color: #333;
+  color: #0F3559;
   text-align: center;
 }
 
@@ -76,7 +75,7 @@ textarea,
 select {
   width: calc(100% - 160px);
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 40px;
   border: 1px solid #ccc;
 }
 
@@ -95,10 +94,11 @@ select {
 table {
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 table, th, td {
-  border: 1px solid #ddd;
+  border: 1px solid #99E2DD;
 }
 
 th, td {
@@ -109,3 +109,46 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+.dashboard-logo {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0.8;
+  border-radius: 20px;
+}
+button-container {
+  text-align: center; /* Align buttons to the center */
+ 
+}
+
+.button-container button {
+  margin: 0 10px; /* Add space between buttons */
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+#gender {
+ width: 80px;
+}
+
+body, input, select, textarea, button {
+  font-weight: bold; /* Make all text bold */
+}
+
+.button-container button:nth-of-type(1) {
+  background-color: #ff6347; /* Coral */
+  color: #fff; /* White text */
+}
+
+/* Button 2 */
+.button-container button:nth-of-type(2) {
+  background-color: #6495ed; /* Cornflower Blue */
+  color: #fff; /* White text */
+}
+
+/* Button 3 */
+.button-container button:nth-of-type(3) {
+  background-color: #ffd700; /* Gold */
+  color: #333; /* Dark text */
+}
+
