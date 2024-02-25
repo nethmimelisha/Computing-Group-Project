@@ -67,3 +67,30 @@
     margin-bottom: 40px;
     pointer-events: none;
   }
+
+  .navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--black1);
+  }
+  .navigation ul li:hover a,
+  .navigation ul li.hovered a {
+    color: var(--darkblue);
+  }
+  
+  .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+  }
+  .navigation ul li a .i {
+    font-size: 1.75rem;
+  }
+
+  
