@@ -1,23 +1,22 @@
 /* =========== Google Fonts ============ */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-
 * {
-  font-family: "Ubuntu", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --blue: #094176;
-  --white: #fff;
-  --gray: #f5f5f5;
-  --black1: #222;
-  --black2: #999;
-  --pink: #FF69B4; 
-  --yellow: #e9e904; 
-  --green: #0a940a;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --blue: #4a92d5;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --pink: #FF69B4; /* Pink color */
+    --yellow: #e9e904; /* Yellow color */
+    --green: #0a940a; /* Green color */
 }
 
 body {
@@ -26,11 +25,11 @@ body {
 }
 
 .container {
-  position: relative;
-  width: 100%;
-}
+    position: relative;
+    width: 100%;
+  }
 
-/* =============== Navigation ================ */
+  /* =============== Navigation ================ */
 .navigation {
   position: fixed;
   width: 300px;
@@ -95,19 +94,19 @@ body {
 }
 
 .i {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-}
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
 
 .navigation ul li a .title {
-position: relative;
-display: block;
-padding: 0 10px;
-height: 60px;
-line-height: 60px;
-text-align: start;
-white-space: nowrap;
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
 }
 
 /* --------- curve outside ---------- */
@@ -351,7 +350,6 @@ white-space: nowrap;
   font-weight: 600;
   color: var(--blue);
 }
-
 .cardHeader .btn {
   position: relative;
   padding: 5px 10px;
@@ -361,112 +359,70 @@ white-space: nowrap;
   border-radius: 6px;
 }
 
-.details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.details table thead td {
-  font-weight: 600;
-}
-.details .recentOrders table tr {
-  color: var(--black1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.details .recentOrders table tr:last-child {
-  border-bottom: none;
-}
-.details .recentOrders table tbody tr:hover {
-  background: var(--blue);
-  color: var(--white);
-}
-.details .recentOrders table tr td {
-  padding: 10px;
-}
-.details .recentOrders table tr td:last-child {
-  text-align: end;
-}
-.details .recentOrders table tr td:nth-child(2) {
-  text-align: end;
-}
-.details .recentOrders table tr td:nth-child(3) {
-  text-align: center;
-}
-.status.done {
-  padding: 2px 4px;
-  background: #8de02c;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.pending {
-  padding: 2px 4px;
-  background: #e9b10a;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.cancel {
-  padding: 2px 4px;
-  background: #f00;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.inProgress {
-  padding: 2px 4px;
-  background: #1795ce;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
+/* ============== Patient Registration Form ============== */
+.patient-registration {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.recentCustomers {
-  position: relative;
-  display: grid;
-  min-height: 500px;
-  padding: 20px;
-  background: var(--white);
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
+.patient-registration h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
 }
-.recentCustomers .imgBx {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  overflow: hidden;
+
+.patient-registration h5 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
-.recentCustomers .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+.patient-registration .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.recentCustomers table tr td {
-  padding: 12px 10px;
+
+.patient-registration .form-group {
+  flex: 0 0 calc(50% - 10px);
+  margin-bottom: 15px;
 }
-.recentCustomers table tr td h4 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.2rem;
+
+.patient-registration label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
 }
-.recentCustomers table tr td h4 span {
-  font-size: 14px;
-  color: var(--black2);
+
+.patient-registration input[type="text"],
+.patient-registration input[type="date"],
+.patient-registration input[type="email"],
+.patient-registration input[type="tel"],
+.patient-registration select,
+.patient-registration textarea {
+    width: calc(100% - 50px);;
+    padding: 10px;
+    border: 2px solid #71b6d4;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
 }
-.recentCustomers table tr:hover {
-  background: var(--blue);
-  color: var(--white);
+
+.patient-registration textarea {
+  height: 80px;
+  resize: vertical;
 }
-.recentCustomers table tr:hover td h4 span {
-  color: var(--white);
+
+
+
+.patient-registration button[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
 /* ====================== Responsive Design ========================== */
@@ -530,4 +486,78 @@ white-space: nowrap;
     right: 0;
     left: initial;
   }
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+thead tr {
+  border-bottom: 1px solid #ddd;
+}
+
+thead th {
+  padding: 8px;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Add border color to status spans */
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.status.done {
+  background-color: lightgreen;
+}
+
+.status.pending {
+  background-color: lightyellow;
+}
+
+.status.cancel {
+  background-color: lightcoral;
+}
+
+.status.inProgress {
+  background-color: lightskyblue;
+}
+
+.button-container button:nth-of-type(1) {
+  background-color: #ff6347; /* Coral */
+  color: #fff; /* White text */
+}
+
+/* Button 2 */
+.button-container button:nth-of-type(2) {
+  background-color: #6495ed; /* Cornflower Blue */
+  color: #fff; /* White text */
+}
+
+/* Button 3 */
+.button-container button:nth-of-type(3) {
+  background-color: #ffd700; /* Gold */
+  color: #333; /* Dark text */
+}
+
+.button-container button {
+  margin: 0 10px; /* Add space between buttons */
+  border-radius: 20px;
+  padding: 10px 20px;
 }
