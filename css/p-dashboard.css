@@ -304,3 +304,70 @@
     font-weight: bold;
     text-align: center;
   }
+
+  /* ====================== Responsive Design ========================== */
+@media (max-width:  991px) {
+    .navigation {
+      left: -300px; 
+      transition: left  0.5s ease; 
+    }
+    .navigation.active {
+      left:  0; 
+    }
+    .main {
+      width:  100%; 
+      left:  0; 
+      transition: left  0.5s ease; 
+    }
+    .main.active {
+      left:  300px; 
+    }
+    .cardBox {
+      display: grid; 
+      grid-template-columns: repeat(2,  1fr); 
+    }
+  }
+  
+  @media (max-width:  768px) {
+    .details {
+      display: grid; 
+      grid-template-columns:  1fr; 
+    }
+    .recentOrders {
+      overflow-x: auto; 
+    }
+    .status.inProgress {
+      white-space: nowrap; 
+    }
+  }
+  
+  @media (max-width:  480px) {
+    .cardBox {
+      display: grid; 
+      grid-template-columns: repeat(1,  1fr); 
+    }
+    .cardHeader h2 {
+      font-size:  20px; 
+    }
+    .user {
+      min-width:  40px; 
+    }
+    .navigation {
+      width:  100%; 
+      left: -100%; 
+      z-index:  1000; 
+      transition: left  0.5s ease; 
+    }
+    .navigation.active {
+      left:  0; 
+    }
+    .toggle {
+      z-index:  10001; 
+    }
+    .main.active .toggle {
+      color: #fff; 
+      position: fixed; 
+      right:  0; 
+      left: initial; 
+    }
+  }
