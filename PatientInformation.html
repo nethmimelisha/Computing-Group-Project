@@ -1,106 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patient Information</title>
-<link rel="stylesheet" href="css/PatientInformation.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/PatientInformation.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="admin.js"></script>
+
 </head>
 <body>
-<div class="user-icon"> <!-- Placeholder for user icon -->
-</div>
-<div class="dashboard">
-  <img src="img/logo.jpg" alt="Logo" class="dashboard-logo">
-  <ul>
-    <li><a href="#">Hospital Info</a></li>
-    <li><a href="#">User Registration</a></li>
-    <li><a href="#">Vaccine Update</a></li>
-    <li><a href="#">Patient Info</a></li>
-  </ul>
-  <ul> 
-    <li><a href="#">Settings</a></li>
-  </ul>
-</div>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="img/logo.png" alt="Admin Dashboard Icon">
+                        </span>
+                        <span class="title">Admin Dashboard</span>
+                    </a>
+                </li>
 
-<div class="content">
-<h2>Admin Dashboard</h2>
+                <li>
+                    <a href="admin.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-gauge"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
 
-  <h3>Patient Information</h3>
-  <div class="user-profile">
-    <div class="input-group">
-      <label for="patient-id">Patient ID:</label>
-      <input type="text" id="patient-id">
-    </div>
-    <div class="input-group">
-      <label for="full-name">Full Name:</label>
-      <input type="text" id="full-name">
-    </div>
-    <div class="input-group">
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob">
-    </div>
-    <div class="input-group">
-      <label for="gender">Gender:</label>
-      <select id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="input-group">
-      <label for="address">Address:</label>
-      <textarea id="address"></textarea>
-    </div>
-  </div>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-regular fa-hospital"></i>
+                        </span>
+                        <span class="title">Hospital Info</span>
+                    </a>
+                </li>
 
-    <div class="input-group">
-      <label for="contact-number">Contact Number:</label>
-      <input type="tel" id="contact-number">
-    </div>
-    <div class="input-group">
-      <label for="email">Email Address:</label>
-      <input type="email" id="email">
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Hospital</th>
-          <th>Vaccine Name</th>
-          <th>Remarks</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Date 1</td>
-          <td>Hospital 1</td>
-          <td>Vaccine Name 1</td>
-          <td>Remarks 1</td>
-        </tr>
-        <tr>
-          <td>Date 2</td>
-          <td>Hospital 2</td>
-          <td>Vaccine Name 2</td>
-          <td>Remarks 2</td>
-        </tr>
-        <tr>
-          <td>Date 3</td>
-          <td>Hospital 3</td>
-          <td>Vaccine Name 3</td>
-          <td>Remarks 3</td>
-        </tr>
-        <tr>
-          <td>Date 4</td>
-          <td>Hospital 4</td>
-          <td>Vaccine Name 4</td>
-          <td>Remarks 4</td>
-        </tr>
-      </tbody>
-    </table>
-     <div class="button-container">
+                <li>
+                    <a href="register.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </span>
+                        <span class="title">User Registration</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-syringe"></i>
+                        </span>
+                        <span class="title">Vaccination Updates</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+                        <span class="title">Patient Information</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-key"></i>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+         <!-- ========================= Main ==================== -->
+         <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                        
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Patient Name / Username">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="img/asiri.png" alt="">
+                </div>
+            </div>
+
+            <!-- ==================== Patient Registration Form ==================== -->
+<div class="patient-registration">
+    <h2>Patient Information</h2>
+   
+    <form action="register.php" method="POST">
+
+<div class="form-group">
+            <label for="fullname">Patient ID
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+
+        <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+<table>
+                <thead>
+                    <tr>
+                        <td>Date
+                        <td>Hospital
+                        <td>Vaccine Name
+                        <td>Remarks
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Date 1</td>
+                        <td>Hospital 1</td>
+                        <td>Covid-19 Vaccination</td>
+                        <td><span class="status done">Done</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 2</td>
+                        <td>Hospital 2</td>
+                        <td>Chickenpox</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 3</td>
+                        <td>Hospital 3</td>
+                        <td>Influenza (flu)</td>
+                        <td><span class="status cancel">Cancel</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 4</td>
+                        <td>Hospital 4</td>
+                        <td>Polio</td>
+                        <td><span class="status inProgress">In Progress</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 5</td>
+                        <td>Hospital 5</td>
+                        <td>Covid-19 Vaccination</td>
+                        <td><span class="status done">Done</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 6</td>
+                        <td>Hospital 6</td>
+                        <td>Chickenpox</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 7</td>
+                        <td>Hospital 7</td>
+                        <td>Influenza (flu)</td>
+                        <td><span class="status cancel">Cancel</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Date 8</td>
+                        <td>Hospital 8</td>
+                        <td>Polio</td>
+                        <td><span class="status inProgress">In Progress</span></td>
+                    </tr>
+                </tbody>
+            </table>
+           
+<div class="button-container">
       <button>Edit Details</button>
       <button>Save Changes</button>
       <button>Discard</button>
     </div>
-</body>
+        
+    </form>
+</div>
+            
+       
+
+     </body>
+
 </html>
+
+    
