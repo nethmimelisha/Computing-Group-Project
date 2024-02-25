@@ -49,3 +49,21 @@
     left: 0;
     width: 100%;
   }
+
+  .navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  
+  .navigation ul li:hover,
+  .navigation ul li.hovered {
+    background-color: var(--white);
+  }
+  
+  .navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+  }
