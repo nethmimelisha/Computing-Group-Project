@@ -136,3 +136,22 @@
   box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
+
+.icon img {
+    width: 64px; 
+    height: 64px; 
+    vertical-align: middle;
+}
+
+.icon1{
+    display: flex;
+    align-items: center;
+}
+.icon1{
+    margin-left: 10px;
+}
+.icon1 img {
+    width: 34px; 
+    height: 34px; 
+    vertical-align: middle;
+}
