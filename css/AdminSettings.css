@@ -1,21 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
+
 * {
-    font-family: "Ubuntu", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  :root {
-    --blue: #4a92d5;
-    --white: #fff;
-    --gray: #f5f5f5;
-    --black1: #222;
-    --black2: #999;
-    --pink: #FF69B4; /* Pink color */
-    --yellow: #e9e904; /* Yellow color */
-    --green: #0a940a; /* Green color */
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #094176;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+  --pink: #FF69B4; 
+  --yellow: #e9e904; 
+  --green: #0a940a;
 }
 
 body {
@@ -24,11 +25,11 @@ body {
 }
 
 .container {
-    position: relative;
-    width: 100%;
-  }
+  position: relative;
+  width: 100%;
+}
 
-  /* =============== Navigation ================ */
+/* =============== Navigation ================ */
 .navigation {
   position: fixed;
   width: 300px;
@@ -93,19 +94,19 @@ body {
 }
 
 .i {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-  }
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
 
 .navigation ul li a .title {
-  position: relative;
-  display: block;
-  padding: 0 10px;
-  height: 60px;
-  line-height: 60px;
-  text-align: start;
-  white-space: nowrap;
+position: relative;
+display: block;
+padding: 0 10px;
+height: 60px;
+line-height: 60px;
+text-align: start;
+white-space: nowrap;
 }
 
 /* --------- curve outside ---------- */
@@ -142,10 +143,46 @@ body {
     vertical-align: middle;
 }
 
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+
+
 .settings-container {
     position: absolute;
-    margin-top: 25%;
-    left: 19%;
+    margin-top: 65%;
+    left: 2%;
     display: flex;
     align-items: center;
     height: 100%;
@@ -156,7 +193,7 @@ body {
 
 .sidebar {
     width: 60px; /* Adjust as needed */
-    background-color: #07317a;
+    background-color: #aef380;
     padding: 20px 0;
     
 }
@@ -172,7 +209,7 @@ body {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #080808;
     display: block;
     padding: 10px;
     border-radius: 5px;
@@ -180,11 +217,120 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background-color: #11437c;
+    background-color: #87e880;
 }
 
 .sidebar ul li a i {
     font-size: 24px;
+}
+
+.main-content {
+  width: 70%;
+  padding: 30px; /* Adjust padding to fit the content */
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-top: 10%;
+  height: 70%;
+}
+
+.main-content h2 {
+  margin-bottom: 20px; /* Add margin below heading */
+}
+
+.main-content form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main-content form input {
+  width: 100%; /* Make input fields full width */
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.main-content form button {
+  width: 100%; /* Make button full width */
+  padding: 12px 20px;
+  border: none;
+  background-color: var(--blue);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.main-content form button:hover {
+  background-color: #007bff;
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
 }
 
 
