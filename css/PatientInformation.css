@@ -415,8 +415,9 @@ body {
 }
 
 .patient-registration textarea {
-  height: 80px;
+  height: 40px;
   resize: vertical;
+  border-radius: 100px;
 }
 
 

@@ -143,8 +143,6 @@ white-space: nowrap;
     height: 64px; 
     vertical-align: middle;
 }
-
-/* ===================== Main ===================== */
 .main {
   position: absolute;
   width: calc(100% - 300px);
@@ -224,16 +222,97 @@ white-space: nowrap;
     width: auto;
     height: 100%;
   }
-
- {
-    padding:0;
-    margine:0;
-    font-family:sans-serif;
+/* Styling for Hospital Information section */
+.HospitalInformation {
+  position: absolute;
+  top: 50%;
+  left: 350px; /* Adjust to position it to the right of the navigation bar */
+  transform: translateY(-50%);
+  margin: 20px; /* Adjust margin as needed */
+  width: calc(100% - 370px); /* Adjust width to leave space for navigation */
 }
-body{
-    background: url('./bg.jpg') no-repeat;
-    background-size: cover;
+
+/* Styling for headings */
+.HospitalInformation h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Styling for form inputs */
+.HospitalInformation input[type="text"] {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styling for form labels */
+.HospitalInformation p {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
     color: #fff;
+<<<<<<< HEAD
 }
 .Hospital-Information{
     position:absolute;
@@ -353,3 +432,10 @@ body{
     display: block;
     margin-bottom: 5px;
   }
+=======
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+>>>>>>> 169f1948688a8b0316325db04a43ee75eb785f6a
