@@ -260,28 +260,6 @@ th {
     background-color: #f2f2f2;
 }
 
-.main {
-  position: absolute;
-  width: calc(100% -  300px); 
-  left:  300px; 
-  min-height:  100vh;
-  background: var(--white);
-  transition:  0.5s;
-  padding-left:  20px; 
-}
-
-
-.container {
-  position: relative;
-  width:  100%;
-}
-
-
-.main.active {
-  width: calc(100% -  80px); 
-  left:  80px; 
-}
-
 @media (max-width:  768px) {
   .navigation {
     width:  100%; 
