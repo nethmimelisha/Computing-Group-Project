@@ -240,7 +240,7 @@ white-space: nowrap;
 
 /* Styling for form inputs */
 .HospitalInformation input[type="text"] {
-  width: 100%;
+  width: 50%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
