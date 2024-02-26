@@ -94,3 +94,19 @@ body {
     font-size: 1.75rem;
   }
   
+  .i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+.navigation ul li a .title {
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  padding: 0 30px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  white-space: nowrap;
+}
