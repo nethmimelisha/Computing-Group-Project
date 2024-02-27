@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings Slide</title>
-    <link rel="stylesheet" href="css/AdminSettings.css">
+    <link rel="stylesheet" href="css/PrivaccySettings.css">
     <script src="https://kit.fontawesome.com/f9dc94ec3b.js" crossorigin="anonymous"></script>
     <script src="js/admin.js"></script>
 
@@ -107,29 +107,32 @@
                 <li><a href="#password-manager"><i class="fas fa-key"></i></a></li>
             </ul>
         </div>
-       
         <div class="main-content">
-            <div id="profile" class="setting-content">
-                <h2>Profile Settings</h2>
+            <div id="privacy-settings" class="setting-content">
+                <h2>Privacy Settings</h2>
+                
+                <p>
+                    At [Website Name], safeguarding your privacy and ensuring the security of your information are fundamental principles that guide everything we do. We recognize the importance of protecting your personal data and are committed to maintaining the highest standards of privacy and security.
+
+To uphold this commitment, we have implemented comprehensive measures designed to safeguard your information. This includes employing advanced encryption techniques to secure the transmission of data between your device and our servers, as well as robust security protocols to protect against unauthorized access, disclosure, alteration, or destruction of your personal information.
+
+Furthermore, we adhere strictly to relevant privacy laws and regulations, ensuring that your data is collected, processed, and stored in compliance with applicable legal requirements. We also provide clear and transparent information about our data handling practices through our Privacy Policy, empowering you to make informed decisions about the use of your information.
+
+Our dedication to privacy and security extends to every aspect of our operations, from the design of our website and the implementation of technical safeguards to the training of our staff on best practices for handling sensitive data.
+
+We want you to feel confident and secure when interacting with our website, knowing that your privacy is respected, and your information is protected. If you have any questions or concerns about our privacy and security practices, please don't hesitate to contact us. Thank you for trusting us with your information </p>
                 
                 <form>
-                    <div class="image-container">
-                        <img src="img/user_847969.png" >
-                        <span class="image-icon"><i class="fa-light fa-camera"></i></span>
-                    </div>
-                    
-                   <label for="email">Email:</label>
-                       <input type="email" id="email" name="email" required>
-
-                   <label for="phone">Phone Number:</label>
-                       <input type="tel" id="phone" name="phone" required>
-
-                  <label for="address">Address:</label>
-                       <textarea id="address" name="address" required></textarea>
-                 <button type="submit">Save Changes</button>
+                    <label for="privacy-checkbox">
+                        <input type="checkbox" id="privacy-checkbox" required>
+                        I have read and accept the <a href="#">Privacy Policy</a>.
+                    </label>
+                    <button type="submit">submit</button>
                 </form>
             </div>
-        
-
+        </div>
+    </div>
+</div>
+</div>
 </body>
 </html>
