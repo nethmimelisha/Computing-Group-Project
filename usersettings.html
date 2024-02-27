@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/p-dashboard.css">
+    <link rel="stylesheet" href="css/usersettings.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -16,7 +15,6 @@
     <script src="js/admin.js"></script>
 
 </head>
-
 <body>
     <!-- =============== Navigation ================ -->
     <div class="container">
@@ -95,75 +93,42 @@
                 </li>
             </ul>
         </div>
-
-        <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
                 <div class="toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                        
-                <div class="user">
-                    <img src="img/male.jpg" alt="">
-                </div>
-            </div>
-
-
-            <!-- ======================= Card ======================== -->
-            <div class="cardBox">
-                <a href="#" class="card-link">
-                    <div class="card">
-                        <div>
-                            <div class="image">
-                                <img src="img/user-info.png" alt="Image 1">
-                            </div>
-                            <div class="cardText">
-                                <p>User Information</p>
-                            </div>
-                        </div>
+                <div class="settings-container">
+                    <div class="sidebar">
+                        <ul>
+                            <li><a href="usersettings.html"><i class="fas fa-user"></i></a></li>
+                            <li><a href="UserPrivacySettings.html"><i class="fas fa-lock"></i></a></li>
+                            <li><a href="AdminPasswordSettings.html"><i class="fas fa-key"></i></a></li>
+                        </ul>
                     </div>
-                </a>
-
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/vaccine-history.png" alt="Image 2">
+                   
+                    <div class="main-content">
+                        <div id="profile" class="setting-content">
+                            <h2>Profile Settings</h2>
+                            
+                            <form>
+                                <div class="image-container">
+                                    <img src="img/user_847969.png" >
+                                    <span class="image-icon"><i class="fa-light fa-camera"></i></span>
+                                </div>
+                                
+                               <label for="email">Email:</label>
+                                   <input type="email" id="email" name="email" required>
+            
+                               <label for="phone">Phone Number:</label>
+                                   <input type="tel" id="phone" name="phone" required>
+            
+                              <label for="address">Address:</label>
+                                   <textarea id="address" name="address" required></textarea>
+                             <button type="submit">Save Changes</button>
+                            </form>
                         </div>
-                        <div class="cardText">
-                            <p>Vaccination History</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/edu-resources.png" alt="Image 2">
-                        </div>
-                        <div class="cardText">
-                            <p>Educational Resources</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/emg-contact.png" alt="Image 2">
-                        </div>
-                        <div class="cardText">
-                            <p>Emergency Contacts</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-
-            </div>
-    </body>
-
-</html>
+                    
+            
+            </body>
+            </html>
