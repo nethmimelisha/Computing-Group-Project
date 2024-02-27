@@ -18,4 +18,14 @@
   --yellow: #e9e904; /* Yellow color */
   --green: #0a940a; /* Green color */
 }
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
  
