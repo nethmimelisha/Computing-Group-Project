@@ -230,3 +230,50 @@
   {
       font-size: 24px;
   }
+  /* Privacy Settings Form */
+.main-content {
+  width: 50%;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+  margin-left: 200px;
+}
+
+.main-content h2 {
+  margin-bottom: 20px;
+}
+
+.main-content form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main-content form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.main-content form button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  background-color: var(--blue);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.main-content form button:hover {
+  background-color: #007bff;
+}
+
+/* Privacy Policy Paragraph */
+.main-content p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
