@@ -260,3 +260,32 @@ body {
   .guardian-details {
     margin-bottom: 20px;
   }
+
+  .info,
+  .guardian {
+    width: 100%;
+  }
+  
+  textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 2px solid #3498db; 
+    border-radius: 15px;
+    box-sizing: border-box;
+    resize: none;
+    background-color: #fff; 
+  }
+  
+  textarea:focus {
+    outline: none;
+  }
+  
+  .name {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
