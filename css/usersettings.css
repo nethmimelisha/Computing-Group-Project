@@ -203,7 +203,7 @@ body {
 
 .sidebar {
     width: 60px; /* Adjust as needed */
-    background-color: #aef380;
+    background-color: #09888a80;
     padding: 20px 0;
     
 }
@@ -227,7 +227,7 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background-color: #87e880;
+    background-color: #66ebf5;
 }
 
 .sidebar ul li a i {
@@ -237,7 +237,7 @@ body {
   .main-content {
     width: 70%;
     padding: 30px;
-    background-color: #f4ecec;
+    background-color: #9b9f9a40;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: -10%;
@@ -269,8 +269,8 @@ body {
     width: 100%;
     padding: 12px 20px;
     border: none;
-    background-color: var(--blue);
-    color: #fffbfb;
+    background-color: #09888a80;
+    color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -278,7 +278,7 @@ body {
   }
   
   .main-content form button:hover {
-    background-color: #007bff;
+    background-color: #6ae5ea;
   }
   
   .image-container {
