@@ -240,4 +240,23 @@ body {
       width: auto;
       height: 100%;
     }
+
+     /* ===================== User Info ===================== */
+
+  .container1 {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: none; 
+    border-radius: 8px;
+  }
   
+  h1 {
+    text-align: center;
+  }
+  
+  .patient-details,
+  .guardian-details {
+    margin-bottom: 20px;
+  }
