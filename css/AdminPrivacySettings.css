@@ -253,7 +253,7 @@ margin-right: 10px;
 width: 100%;
 padding: 12px 20px;
 border: none;
-background-color:#09888a8f;
+background-color:#094176;
 border-radius: 5px;
 cursor: pointer;
 font-size: 16px;
@@ -261,7 +261,7 @@ transition: background-color 0.3s ease;
 }
 
 .main-content form button:hover {
-background-color:  #66ebf5;
+background-color:  #007bff;
 }
 
 /* Privacy Policy Paragraph */
