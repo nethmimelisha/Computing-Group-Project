@@ -58,7 +58,7 @@ body {
   .container {
     max-width: 90%;
     margin: auto;
-    margin-left:50px;
+    margin-left:20px;
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -67,7 +67,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    height: 50vh;
   }
   
   .logo {
