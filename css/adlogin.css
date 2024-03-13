@@ -14,7 +14,7 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  color: #0c0c0c;
+  color: #4a939a;
   padding: 10px 20px;
   cursor: pointer;
   
@@ -26,6 +26,8 @@ body {
     left: 20px;
     color: #0c0c0c;
     padding: 10px 20px;
+    background-color: #6597c583;
+    height: 70vh;
     cursor: pointer;
     z-index: 9999;
   }
@@ -58,7 +60,7 @@ body {
   .container {
     max-width: 90%;
     margin: auto;
-    margin-left:20px;
+    margin-left:45%;
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -67,7 +69,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50vh;
+    
   }
   
   .logo {
@@ -146,8 +148,6 @@ input[type="password"] {
       margin-right: 20px; 
     }
   
-    .login-btn {
-      width: auto; 
-    }
+    
   }
  
