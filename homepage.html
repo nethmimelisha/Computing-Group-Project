@@ -173,12 +173,20 @@
                                     </div>
 
                                     <p class = "text title-box-text text-white">Learn more about our team who developed this application.</p>
-                                    <button type = "button" class = "btn btn-white-outline">Learn more</button>
+                                    <button id="learnMoreBtn" type="button" class="btn btn-white-outline">Learn more</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
+                <script>
+                    
+                    document.getElementById("learnMoreBtn").onclick = function() {
+                        
+                        window.location.href = 'aboutus.html';
+                    };
+                </script>
 
                 
 
