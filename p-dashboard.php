@@ -27,7 +27,25 @@
                         <span class="icon">
                             <img src="img/logo.png" alt="Admin Dashboard Icon">
                         </span>
-                        <span class="title">Welcome Pulindu</span>
+                        <span>
+                        <?php
+session_start();
+
+// Check if the username is set in the session
+if(isset($_SESSION['username'])) {
+    // Retrieve the username from the session
+    $username = $_SESSION['username'];
+
+    // Display a welcome message with the username
+    echo "<p style='color: black; font-size: 15px;margin-top:16px;'>Welcome, $username!</p>";
+
+    
+} else {
+    // Handle case where the username is not set in the session
+    echo "Error: Username not found.";
+}
+?>
+                        </span>
                     </a>
                 </li>
 
@@ -41,7 +59,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="user-info.php">
                         <span class="icon1">
                             <img src="img/man.png" alt="Admin Dashboard Icon">
                         </span>

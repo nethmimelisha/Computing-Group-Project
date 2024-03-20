@@ -15,8 +15,8 @@
             <div class="dropdown">
                 <button class="get-started-btn"><b>Get Started</b></button>
                 <div class="dropdown-content">
-                    <a href="adlogin.html">Admin</a>
-                    <a href="patientlogin.html">User</a>
+                    <a href="adlogin.php">Admin</a>
+                    <a href="patientlogin.php">User</a>
                 </div>
             </div>
         </div>
