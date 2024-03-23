@@ -113,120 +113,72 @@
             </div>
 
             <!-- ==================== Patient Information ==================== -->
-<div class="patient-registration">
-    <h2>Patient Information</h2>
-   
-    <form action="register.php" method="POST">
+ <div class="patient-registration">
+                <h2>Patient Information</h2>
+               
+                <form action="register.php" method="POST">
+                    <div class="form-group">
+                        <label for="patient_id">Patient ID</label>
+                        <input type="text" id="patient_id" name="patient_id" value="Patient ID Here">
+                    </div>
 
-<div class="form-group">
-            <label for="fullname">Patient ID
-            <textarea id="patient_id" name="patient_id" readonly>Patient ID Here</textarea>
-        </div>
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" value="Full Name Here">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="text" id="dob" name="dob" value="Date of Birth Here">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" value="Address Here">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" name="phone" value="Phone Number Here">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" value="Email Here">
+                    </div>
 
-
-        <div class="form-group">
-            <label for="fullname">Full Name</label>
-            <textarea id="full_name" name="full_name" readonly>Full Name Here</textarea>
-        </div>
-        <div class="form-group">
-            <label for="dob">Date of Birth</label>
-            <textarea id="dob" name="dob" readonly>Date of Birth Here</textarea>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="address">Address</label>
-            <textarea id="address" name="address" readonly>Address Here</textarea>
-        </div>
-
-        <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <textarea id="phone" name="phone" readonly>Phone Number Here</textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <textarea id="email" name="email" readonly>Email Here</textarea>
-            </div>
             
-<table>
-                <thead>
-                    <tr>
-                        <td>Date
-                        <td>Hospital
-                        <td>Vaccine Name
-                        <td>Remarks
-                    </tr>
-                </thead>
+             <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Hospital</th>
+                            <th>Vaccine Name</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                <tbody>
-                    <tr>
-                        <td>Date 1</td>
-                        <td>Hospital 1</td>
-                        <td>Covid-19 Vaccination</td>
-                        <td><span class="status done">Done</span></td>
-                    </tr>
+                             <?php foreach ($vaccination_records as $record): ?>
+                            <tr>
+                                <td><?php echo $record['date']; ?></td>
+                                <td><?php echo $record['hospital']; ?></td>
+                                <td><?php echo $record['vaccine_name']; ?></td>
+                                <td><span class="status <?php echo $record['status']; ?>"><?php echo $record['status']; ?></span></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>           
 
-                    <tr>
-                        <td>Date 2</td>
-                        <td>Hospital 2</td>
-                        <td>Chickenpox</td>
-                        <td><span class="status pending">Pending</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Date 3</td>
-                        <td>Hospital 3</td>
-                        <td>Influenza (flu)</td>
-                        <td><span class="status cancel">Cancel</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Date 4</td>
-                        <td>Hospital 4</td>
-                        <td>Polio</td>
-                        <td><span class="status inProgress">In Progress</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Date 5</td>
-                        <td>Hospital 5</td>
-                        <td>Covid-19 Vaccination</td>
-                        <td><span class="status done">Done</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Date 6</td>
-                        <td>Hospital 6</td>
-                        <td>Chickenpox</td>
-                        <td><span class="status pending">Pending</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Date 7</td>
-                        <td>Hospital 7</td>
-                        <td>Influenza (flu)</td>
-                        <td><span class="status cancel">Cancel</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Date 8</td>
-                        <td>Hospital 8</td>
-                        <td>Polio</td>
-                        <td><span class="status inProgress">In Progress</span></td>
-                    </tr>
-                </tbody>
-            </table>
            
 <div class="button-container">
       <button>Edit Details</button>
