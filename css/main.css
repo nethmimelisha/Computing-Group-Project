@@ -2,7 +2,7 @@
 
 
 :root{
-    --clr-blue: #44d0d0;
+    --clr-blue: #96d9e8;
     --clr-black: #000;
     --clr-white: #fff;
     --clr-gray: #7d7987;
@@ -46,7 +46,7 @@ img, picture, video, canvas, svg{
     max-width: 100%;
     display: block;
 }
-input, button, textarea, select{
+input, textarea, select{
     font: inherit;
     outline: 0;
 }
@@ -67,11 +67,6 @@ body{
     font-weight: 300;
 }
 
-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
 .page-wrapper{
     overflow: hidden!important;
 }

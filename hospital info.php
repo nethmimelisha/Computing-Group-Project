@@ -1,6 +1,3 @@
-<?php
-include("connection.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +7,9 @@ include("connection.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/hospitalinfo.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <script src="js/admin.js"></script>
 
 </head>
@@ -87,7 +83,7 @@ include("connection.php");
                 </li>
 
                 <li>
-                    <a href="AdminPasswordSettings.php">
+                    <a href="adminSettings.html">
                         <span class="icon">
                             <i class="fa-solid fa-gear"></i>
                         </span>
@@ -96,7 +92,7 @@ include("connection.php");
                 </li>
 
                 <li>
-                    <a href="Adlogout.php">
+                    <a href="#">
                         <span class="icon">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         </span>
@@ -112,99 +108,68 @@ include("connection.php");
                 <div class="toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-            
+               
             </div>
 
-                 <!-- ======================= Cards ================== -->
-                 <div class="cardBox">
-                 
-                    <div class="card hospital">
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-regular fa-hospital" style="color: #0F3559;"></i>
-                            </div>
-                            <div class="cardName blue">Hospital Info</div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="card appointments">
-                          
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-regular fa-calendar-check" style="color: #FF69B4;"></i> </i>
-                            </div>
-                            <div class="cardName pink">Patient Information</div>
-                        </div>
-                    </div>
-                
-                    <div class="card vaccination">
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-solid fa-syringe" style="color: #b8c411;"></i>
-                            </div>
-                            <div class="cardName yellow">Vaccination Update</div>
-                        </div>
-                    </div>
-                
-                    <div class="card patient">
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-solid fa-user" style="color: #0a940a;"></i>
-                            </div>
-                            <div class="cardName green">Patient Registration</div>
-                        </div>
-                    </div>
-                </div>
+            <!-- ========================= Hospital Info ==================== -->
 
-                 <!-- ================ Vaccination Progress ================= -->
-    <div class="details">
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>Vaccination Progress</h2>
-    
-            </div>
+            <div class="container1">
+                <h1>Hospital Information</h1><br>
+                <div class="patient-details">
+                  <div class="info">
+                    <h2>Hospital Info</h2><br>
 
-            <table>
-                <thead>
-                    <tr>
-                        <td>Vaccine_ID </td>
-                        <td>Name</td>
-                        <td>Type</td>
-                        <td>Purpose</td>
-                        <td>Serial_Number</td>
-                    </tr>
-                </thead>
+                    <?php
+                // Include your database connection file
+                include "connection.php";
 
+                // Fetch hospital data from the database
+                $sql = "SELECT * FROM hospital";
+                $result = mysqli_query($conn, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    // Fetch the user and guardian data as an associative array
+                    $row = mysqli_fetch_assoc($result);
+                   
+                        
+                ?>
+                        <div class="hid">
+                            <label for="hospital-id">Hospital_ID </label>
+                            <textarea readonly rows="1"><?php echo $row["Hospital_ID"]; ?></textarea>
+                        </div>
+
+                        <div class="RegID">
+                            <label for="reg-no">MOH_ID</label>
+                            <textarea readonly id="reg-no" rows="1"><?php echo $row["MOH_ID"]; ?></textarea>
+                        </div>
+
+                        <div class="name">
+                            <label for="hospital-name">Name</label>
+                            <textarea readonly id="hospital-name" rows="1"><?php echo $row["Name"]; ?></textarea>
+                        </div>
+                     
+                        <div class="address">
+                            <label for="hospital-address">Address</label>
+                            <textarea readonly id="hospital-address" rows="4"><?php echo $row["city"] . ", " . $row["district"] . ", " . $row["province"]; ?></textarea>
+                        </div>
+                        
+
+                        <div class="contact">
+                            <label for="hospital-contact">Contact</label>
+                            <textarea readonly id="hospital-contact" rows="1"><?php echo $row["contact"]; ?></textarea>
+                        </div>
                 <?php
-// Include your database connection file
+                    }
+                else {
+                    echo "No hospital data found";
+                }
 
-
-// Fetch data from the vaccine table
-$sql = "SELECT * FROM vaccine";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    // Output data of each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row["vaccine_id"] . "</td>";
-        echo "<td>" . $row["name"] . "</td>";
-        echo "<td>" . $row["type"] . "</td>";
-        echo "<td>" . $row["purpose"] . "</td>";
-        echo "<td>" . $row["serial_number"] . "</td>";
-        echo "</tr>";
-    }
-} else {
-    echo "<tr><td colspan='5'>No data found</td></tr>";
-}
-
-// Close the database connection (if required)
-mysqli_close($conn);
-?>
-
-            </table>
+                
+              
+                ?>
+            </div>
         </div>
+    </div>
     </body>
 
 </html>

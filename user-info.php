@@ -1,4 +1,5 @@
 <?php
+include("connection.php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
@@ -27,7 +28,7 @@ session_start();
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="p-dashboard.php">
                         <span class="icon">
                             <img src="img/logo2.png" alt="Admin Dashboard Icon">
                         </span>
@@ -54,7 +55,7 @@ if(isset($_SESSION['username'])) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="p-dashboard.php">
                         <span class="icon1">
                             <img src="img/pdash.png" alt="Admin Dashboard Icon">
                         </span>
@@ -63,7 +64,7 @@ if(isset($_SESSION['username'])) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="user-info.php">
                         <span class="icon1">
                             <img src="img/man.png" alt="Admin Dashboard Icon">
                         </span>
@@ -72,7 +73,7 @@ if(isset($_SESSION['username'])) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="VaccinationHistory.php">
                         <span class="icon1">
                             <img src="img/vaccine.png" alt="Admin Dashboard Icon">
                         </span>
@@ -80,7 +81,7 @@ if(isset($_SESSION['username'])) {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="educationalResources.php">
                         <span class="icon1">
                             <img src="img/education.png" alt="Admin Dashboard Icon">
                         </span>
@@ -89,7 +90,7 @@ if(isset($_SESSION['username'])) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="emergency.php">
                         <span class="icon1">
                             <img src="img/emergency-call.png" alt="Admin Dashboard Icon">
                         </span>
@@ -98,7 +99,7 @@ if(isset($_SESSION['username'])) {
                 </li>
 
                 <li>
-                    <a href="usersettings.html">
+                    <a href="usersettings.php">
                         <span class="icon1">
                             <img src="img/settings.png" alt="Admin Dashboard Icon">
                         </span>
@@ -107,7 +108,7 @@ if(isset($_SESSION['username'])) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="logout.php">
                         <span class="icon1">
                             <img src="img/logout.png" alt="Admin Dashboard Icon">
                         </span>
@@ -124,9 +125,7 @@ if(isset($_SESSION['username'])) {
                     <i class="fa-solid fa-bars"></i>
                 </div>
                         
-                <div class="user">
-                    <img src="img/male.jpg" alt="">
-                </div>
+                
             </div>
 
             <!-- ========================= User Info ==================== -->
@@ -136,17 +135,14 @@ if(isset($_SESSION['username'])) {
                 <h2>Patient Info</h2><br>
                 <?php
                         
-                        include("connection.php");
+                      
 
                  
                         if (isset($_SESSION['username'])) {
                             
                             $username = $_SESSION['username'];
 
-                           $query = "SELECT c.*, g.* 
-                           FROM child c 
-                           JOIN child_guardian g ON c.Child_ID = g.Child_ID 
-                           WHERE c.username = '$username'";
+                           $query = "SELECT * FROM child WHERE username='$username'";
 
                             $result = mysqli_query($conn, $query);
                             if (!$result) {
@@ -169,20 +165,20 @@ if(isset($_SESSION['username'])) {
 
                                 <div class="name">
                                     <label for="patient-name">First Name</label>
-                                    <textarea readonly id="patient-name" rows="1"><?php echo $data['first_name']; ?></textarea>
+                                    <textarea readonly id="patient-name" rows="1"><?php echo $data['First_Name']; ?></textarea>
                                 </div>
                                 <div class="name">
                                     <label for="patient-name">Last Name</label>
-                                    <textarea readonly id="patient-name" rows="1"><?php echo $data['last_name']; ?></textarea>
+                                    <textarea readonly id="patient-name" rows="1"><?php echo $data['Last_Name']; ?></textarea>
                                 </div>
                                 <div class="birth">
                         <label for="patient-birth">Date of Birth</label>
-                        <textarea readonly id="patient-birth" rows="1"><?php echo $data['DOB']; ?></textarea>
+                        <textarea readonly id="patient-birth" rows="1"><?php echo $data['Date_of_Birth']; ?></textarea>
                     </div>
 
                     <div class="gender">
                         <label for="patient-gender">Gender</label>
-                        <textarea readonly id="patient-gender" rows="1"><?php echo $data['gender']; ?></textarea>
+                        <textarea readonly id="patient-gender" rows="1"><?php echo $data['Gender']; ?></textarea>
                     </div>
 
                     
@@ -193,19 +189,19 @@ if(isset($_SESSION['username'])) {
 
                                 <div class="guardian-name">
                                     <label for="guardian-name">Guardian Name</label>
-                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['guardian_name']; ?></textarea>
+                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['Guardian_Name']; ?></textarea>
                                 </div>
                                 <div class="guardian-name">
                                     <label for="guardian-name">Relationship</label>
-                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['relationship']; ?></textarea>
+                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['Relationship']; ?></textarea>
                                 </div>
                                 <div class="guardian-name">
                                     <label for="guardian-name">Address</label>
-                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['address']; ?></textarea>
+                                    <textarea readonly id="guardian-name" rows="4"><?php echo $data['Address']; ?></textarea>
                                 </div>
                                 <div class="guardian-name">
-                                    <label for="guardian-name">Address</label>
-                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['email']; ?></textarea>
+                                    <label for="guardian-name">Email</label>
+                                    <textarea readonly id="guardian-name" rows="1"><?php echo $data['Email']; ?></textarea>
                                 </div>
 
 
@@ -231,4 +227,3 @@ if(isset($_SESSION['username'])) {
       </body>
   
   </html>
-

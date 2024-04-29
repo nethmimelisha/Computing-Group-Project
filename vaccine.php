@@ -1,6 +1,51 @@
 <?php
-include("connection.php");
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Define your database credentials
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "immunifylanka";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Prepare and bind the INSERT statement
+    $stmt = $conn->prepare("INSERT INTO vaccine (name, type, purpose, serial_number) VALUES (?, ?, ?, ?)");
+
+    // Check if the prepare() succeeded
+    if ($stmt === false) {
+        echo "<script>alert('Prepare failed: " . $conn->error . "');</script>";
+    } else {
+        // Bind parameters
+        $stmt->bind_param("ssss", $vname, $type, $purpose, $serialno);
+
+        // Set parameters and execute
+        $vname = $_POST['vname'];
+        $type = $_POST['type'];
+        $purpose = $_POST['purpose'];
+        $serialno = $_POST['serialno'];
+        if ($stmt->execute()) {
+            echo "<script>alert('New record created successfully');</script>";
+        } else {
+            echo "<script>alert('Error: " . $stmt->error . "');</script>";
+        }
+
+        // Close statement
+        $stmt->close();
+    }
+
+    // Close database connection
+    $conn->close();
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +55,13 @@ include("connection.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/vaccine.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <script src="js/admin.js"></script>
 
 </head>
-
 <body>
     <!-- =============== Navigation ================ -->
     <div class="container">
@@ -87,7 +131,7 @@ include("connection.php");
                 </li>
 
                 <li>
-                    <a href="AdminPasswordSettings.php">
+                    <a href="adminSettings.html">
                         <span class="icon">
                             <i class="fa-solid fa-gear"></i>
                         </span>
@@ -96,7 +140,7 @@ include("connection.php");
                 </li>
 
                 <li>
-                    <a href="Adlogout.php">
+                    <a href="#">
                         <span class="icon">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         </span>
@@ -106,105 +150,47 @@ include("connection.php");
             </ul>
         </div>
 
-        <!-- ========================= Main ==================== -->
-        <div class="main">
+         <!-- ========================= Main ==================== -->
+         <div class="main">
             <div class="topbar">
                 <div class="toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-            
             </div>
 
-                 <!-- ======================= Cards ================== -->
-                 <div class="cardBox">
-                 
-                    <div class="card hospital">
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-regular fa-hospital" style="color: #0F3559;"></i>
-                            </div>
-                            <div class="cardName blue">Hospital Info</div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="card appointments">
-                          
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-regular fa-calendar-check" style="color: #FF69B4;"></i> </i>
-                            </div>
-                            <div class="cardName pink">Patient Information</div>
-                        </div>
-                    </div>
-                
-                    <div class="card vaccination">
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-solid fa-syringe" style="color: #b8c411;"></i>
-                            </div>
-                            <div class="cardName yellow">Vaccination Update</div>
-                        </div>
-                    </div>
-                
-                    <div class="card patient">
-                        <div>
-                            <div class="numbers">
-                                <i class="fa-solid fa-user" style="color: #0a940a;"></i>
-                            </div>
-                            <div class="cardName green">Patient Registration</div>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- ================ Vaccination Progress ================= -->
-    <div class="details">
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>Vaccination Progress</h2>
+         
+         <!-- ========================= Vaccine Form ==================== -->   
+<br><br>
+  
+<div class="patient-registration">
+    <h2>New Vaccine Update</h2>
     
-            </div>
+    <form action="vaccine.php" method="POST">
 
-            <table>
-                <thead>
-                    <tr>
-                        <td>Vaccine_ID </td>
-                        <td>Name</td>
-                        <td>Type</td>
-                        <td>Purpose</td>
-                        <td>Serial_Number</td>
-                    </tr>
-                </thead>
-
-                <?php
-// Include your database connection file
-
-
-// Fetch data from the vaccine table
-$sql = "SELECT * FROM vaccine";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    // Output data of each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row["vaccine_id"] . "</td>";
-        echo "<td>" . $row["name"] . "</td>";
-        echo "<td>" . $row["type"] . "</td>";
-        echo "<td>" . $row["purpose"] . "</td>";
-        echo "<td>" . $row["serial_number"] . "</td>";
-        echo "</tr>";
-    }
-} else {
-    echo "<tr><td colspan='5'>No data found</td></tr>";
-}
-
-// Close the database connection (if required)
-mysqli_close($conn);
-?>
-
-            </table>
+        <div class="form-group">
+            <label for="vname">Vaccine Name</label>
+            <input type="text" id="vname" name="vname" required>
         </div>
-    </body>
 
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" id="type" name="type" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">Purpose of the Vaccine</label>
+            <input type="text" id="purpose" name="purpose" required>
+        </div>
+
+        <div class="form-group">
+            <label for="serialno">Serial Number</label>
+            <input type="text" id="serialno" name="serialno" required>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+     
+
+</body>
 </html>

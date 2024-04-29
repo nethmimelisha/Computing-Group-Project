@@ -86,62 +86,58 @@
 .justify-content-between{justify-content: space-between;}
 
 /* buttons */
-.btn{
-    min-width: 200px;
-    height: 56px;
-    border-radius: 54px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--clr-white);
-    transition: var(--transition-default);
+.get-started-btn {
+    background-color: #084488;
+    color: rgb(233, 234, 236);
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-.btn:hover{
-    color: var(--clr-white);
-    background-color: #1472f4;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-}
-.btn-primary{
-    background-color: var(--clr-blue);
-}
-.btn-primary-outline{
-    border: 1.4px solid var(--clr-blue);
-    color: var(--clr-blue);
-}
-.btn-secondary{
-    background-color: var(--clr-white);
-    color: var(--clr-blue);
-}
-.btn-white-outline{
-    color: var(--clr-white);
-    border: 1.4px solid var(--clr-white);
-}
-.btn-white-outline:hover{
-    background-color: var(--clr-white);
-    color: var(--clr-blue);
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-/* title */
-.title-box .title-box-name{
-    font-weight: 700;
-    font-size: 36px;
-}
-.title-box .title-separator{
-    height: 2px;
-    background-color: var(--clr-black);
-    width: 56px;
-    margin-top: 10px;
-    margin-bottom: 33px;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #c9d8e9;
+    min-width: 125px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-/* margin auto */
-.mx-auto{
-    margin-right: auto;
-    margin-left: auto;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
+
+.dropdown-content a:hover {
+    background-color: #289bd8;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.icon img {
+    width: 104px; 
+    height: 84px; 
+    vertical-align: middle;
+}
+
+.icon1 img {
+    width: 114px; 
+    height: 94px; 
+    vertical-align: middle;
+}
+
 
 @media screen and (max-width: 992px){
     .title-box .title-box-name{

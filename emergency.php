@@ -1,4 +1,8 @@
-
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/p-dashboard.css">
+    <link rel="stylesheet" href="css/emergencey.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -23,29 +27,27 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="p-dashboard.php">
                         <span class="icon">
                             <img src="img/logo2.png" alt="Admin Dashboard Icon">
                         </span>
                         <span>
                         <?php
-session_start();
+
 
 // Check if the username is set in the session
 if(isset($_SESSION['username'])) {
     // Retrieve the username from the session
     $username = $_SESSION['username'];
 
-    // Display a welcome message with the username
-    echo "<p style='color: black; font-size: 15px;margin-top:16px;'>Welcome, $username!</p>";
+    // Display the username wherever you need it in your HTML code
+    echo "<p style='color: black; font-size: 15px;margin-left:10px;margin-top:25px;'>Welcome, $username!</p>";
 
-    
 } else {
     // Handle case where the username is not set in the session
-    echo "Error: Username not found.";
+    echo "Username not found.";
 }
 ?>
-                        </span>
                     </a>
                 </li>
 
@@ -120,20 +122,22 @@ if(isset($_SESSION['username'])) {
                 <div class="toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+              
             </div>
 
 
             <!-- ======================= Card ======================== -->
+            <h1>Emergency Contact</h1>
             <div class="cardBox">
                 <a href="#" class="card-link">
                     <div class="card">
                         <div>
-                            <div class="image">
-                                <img src="img/user-info.png" alt="Image 1">
+                        <div class="cardText">
+                                <p> Colombo General Hospital</p>
+                                <br><br>
+                                <p>Address:The National Hospital of Sri Lanka,<br>Colombo 10.<br>NAtional Hospital:+9411-2691111<br>Inquiries:+9411-2693510<br>Accident Service:+9411-2691111</p> 
                             </div>
-                            <div class="cardText">
-                                <p>User Information</p>
-                            </div>
+                                
                         </div>
                     </div>
                 </a>
@@ -141,12 +145,24 @@ if(isset($_SESSION['username'])) {
                 <a href="#" class="card-link">
                 <div class="card">
                     <div>
-                        <div class="image">
-                            <img src="img/vaccine-history.png" alt="Image 2">
+                    <div class="cardText">
+                            <p>Certis Lanka Ambulance</p>
+                            <br><br>
+                            <p>Address:120 Havelock Rd,Colombo 00500<br>Hours:Open 24 hours<br>Phone:0112585777</p> 
                         </div>
-                        <div class="cardText">
-                            <p>Vaccination History</p>
+                     </div>
+                </div>
+                </a>
+
+                <a href="#" class="card-link">
+                <div class="card">
+                    <div>
+                    <div class="cardText">
+                            <p>Government Hospital Homagama</p>
+                            <br><br>
+                            <p>Address:Hospital Rd,Homagama 10200<br>Hours:Open 24 hours<br>Phone:0112855200</p> 
                         </div>
+                          
                     </div>
                 </div>
                 </a>
@@ -154,26 +170,12 @@ if(isset($_SESSION['username'])) {
                 <a href="#" class="card-link">
                 <div class="card">
                     <div>
-                        <div class="image">
-                            <img src="img/edu-resources.png" alt="Image 2">
+                    <div class="cardText">
+                            <p>Colombo General Hosptal</p>
+                            <br><br>
+                            <p>Address:The National Hospital of Sri Lanka,<br>Colombo 10.National Hospital: +9411-2691111<br>inquiries:+9411-2693510<br>Accident Service:+9411-2691111</p>
                         </div>
-                        <div class="cardText">
-                            <p>Educational Resources</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/emg-contact.png" alt="Image 2">
-                        </div>
-                        <div class="cardText">
-                            <p>Emergency Contacts</p>
-                        </div>
-                    </div>
+                     </div>
                 </div>
                 </a>
 

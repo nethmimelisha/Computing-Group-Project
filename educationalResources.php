@@ -1,4 +1,8 @@
-
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>Educational Resources</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="css/p-dashboard.css">
 
@@ -14,6 +18,61 @@
 
     
     <script src="js/admin.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .resource {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .resource h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .resource p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .resource img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    
+    </style>
 
 </head>
 
@@ -29,22 +88,22 @@
                         </span>
                         <span>
                         <?php
-session_start();
+
 
 // Check if the username is set in the session
 if(isset($_SESSION['username'])) {
     // Retrieve the username from the session
     $username = $_SESSION['username'];
 
-    // Display a welcome message with the username
-    echo "<p style='color: black; font-size: 15px;margin-top:16px;'>Welcome, $username!</p>";
+    // Display the username wherever you need it in your HTML code
+    echo "<p style='color: black; font-size: 15px;margin-left:10px;margin-top:25px;'>Welcome, $username!</p>";
 
-    
 } else {
     // Handle case where the username is not set in the session
-    echo "Error: Username not found.";
+    echo "Username not found.";
 }
 ?>
+
                         </span>
                     </a>
                 </li>
@@ -120,64 +179,54 @@ if(isset($_SESSION['username'])) {
                 <div class="toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+               
             </div>
 
+            <br><br>
+            <h1>Educational Resources</h1>
+            <br><br>
 
-            <!-- ======================= Card ======================== -->
-            <div class="cardBox">
-                <a href="#" class="card-link">
-                    <div class="card">
-                        <div>
-                            <div class="image">
-                                <img src="img/user-info.png" alt="Image 1">
-                            </div>
-                            <div class="cardText">
-                                <p>User Information</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
 
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/vaccine-history.png" alt="Image 2">
-                        </div>
-                        <div class="cardText">
-                            <p>Vaccination History</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
+            <div class="resources">
+        <?php
+        // Database connection parameters
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "immunifylanka";
 
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/edu-resources.png" alt="Image 2">
-                        </div>
-                        <div class="cardText">
-                            <p>Educational Resources</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
 
-                <a href="#" class="card-link">
-                <div class="card">
-                    <div>
-                        <div class="image">
-                            <img src="img/emg-contact.png" alt="Image 2">
-                        </div>
-                        <div class="cardText">
-                            <p>Emergency Contacts</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $database);
 
-            </div>
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Retrieve data from the education table
+        $sql = "SELECT * FROM education";
+        $result = $conn->query($sql);
+
+        // Check if there are any records in the result
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                // Display resource information
+                echo "<div class='resource'>";
+                echo "<h2>" . $row["title"] . "</h2>";
+                echo "<p>" . $row["description"] . "</p>";
+                echo "<img src='" . $row["image"] . "' alt='" . $row["title"] . "' />";
+                echo "</div>";
+            }
+        } else {
+            echo "No educational resources available.";
+        }
+
+        // Close database connection
+        $conn->close();
+        ?>
+    </div>
     </body>
 
 </html>

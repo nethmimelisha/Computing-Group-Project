@@ -9,15 +9,14 @@
 }
 
 :root {
-  --blue: #D8F8F8;
+  --blue: #150c37;
   --white: #fff;
   --gray: #f5f5f5;
   --black1: #222;
   --black2: #999;
-  --pink: #FF69B4; 
-  --yellow: #e9e904; 
-  --green: #0a940a; 
-  --darkblue: #0F3559;
+  --pink: #FF69B4; /* Pink color */
+  --yellow: #e9e904; /* Yellow color */
+  --green: #0a940a; /* Green color */
 }
 
 body {
@@ -75,11 +74,11 @@ body {
   width: 100%;
   display: flex;
   text-decoration: none;
-  color: var(--black1);
+  color: var(--white);
 }
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-  color: var(--darkblue);
+  color: var(--blue);
 }
 
 .navigation ul li a .icon {
@@ -103,10 +102,10 @@ body {
 .navigation ul li a .title {
   position: relative;
   display: block;
-  padding: 0 30px;
+  padding: 0 10px;
   height: 60px;
   line-height: 60px;
-  text-align: center;
+  text-align: start;
   white-space: nowrap;
 }
 
@@ -139,24 +138,10 @@ body {
 }
 
 .icon img {
-    width: 64px; 
-    height: 64px; 
+    width: 54px; 
+    height: 54px; 
     vertical-align: middle;
 }
-
-.icon1{
-    display: flex;
-    align-items: center;
-}
-.icon1{
-    margin-left: 10px;
-}
-.icon1 img {
-    width: 34px; 
-    height: 34px; 
-    vertical-align: middle;
-}
-
 
 /* ===================== Main ===================== */
 .main {
@@ -221,10 +206,6 @@ body {
   font-size: 1.2rem;
 }
 
-h1{
-    text-align: center;
-}
-
 .user {
   position: relative;
   width: 60px;
@@ -243,179 +224,155 @@ h1{
     height: 100%;
   }
 
+/* ============== Patient Registration Form ============== */
+.patient-registration {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-/* ====================== Card =========================*/
-.cardBox {
+.patient-registration h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.patient-registration h5 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.patient-registration .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.patient-registration .form-group {
+    flex: 0 0 calc(50% - 10px);
+    margin-bottom: 15px;
+}
+
+.patient-registration label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.patient-registration input[type="text"],
+.patient-registration input[type="date"],
+.patient-registration input[type="email"],
+.patient-registration input[type="tel"],
+.patient-registration select,
+.patient-registration textarea {
+    width: calc(100% - 50px);;
+    padding: 10px;
+    border: 2px solid #71b6d4;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.patient-registration textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.patient-registration button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.patient-registration button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.patient-registration button{
+  border: 0;
+  outline: 0;
+  background: #007bff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between;
-  margin-left: 20px; 
-  margin-right: 20px; 
-}
-
-.card {
-  width: calc(50% - 40px); 
-  height: 290px;
-  min-width: 550px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  box-sizing: border-box; 
-  padding: 20px; 
-  border: 1px solid #e5dfdf; 
-  border-radius: 12px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  transition: all 0.3s ease; 
-}
-
-.card-link {
-  text-decoration: none; 
-  color: inherit; 
-}
-
-.card:hover {
-  border-color: #D8F8F8; 
-  box-shadow: 0 8px 16px rgba(77, 209, 232, 0.3); 
-}
-
-.card:hover .card-content {
-  transform: translateY(-10px); 
-}
-
-.card-content {
-  transition: transform 0.3s ease; 
-}
-
-.image {
-  position: relative;
-  width: auto; 
-  height: 200px; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-}
-
-.image img {
-  position: absolute;
-  max-width: 100%; 
-  max-height: 100%; 
-}
-
-.cardText {
-  padding: 10px;
-}
-
-.cardText p {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.card p{
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 26px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 
 /* ====================== Responsive Design ========================== */
-@media (max-width:  991px) {
+@media (max-width: 991px) {
   .navigation {
-    left: -300px; 
-    transition: left  0.5s ease; 
+    left: -300px;
   }
   .navigation.active {
-    left:  0; 
+    width: 300px;
+    left: 0;
   }
   .main {
-    width:  100%; 
-    left:  0; 
-    transition: left  0.5s ease; 
+    width: 100%;
+    left: 0;
   }
   .main.active {
-    left:  300px; 
+    left: 300px;
   }
   .cardBox {
-    display: grid; 
-    grid-template-columns: repeat(2,  1fr); 
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width:  768px) {
+@media (max-width: 768px) {
   .details {
-    display: grid; 
-    grid-template-columns:  1fr; 
+    grid-template-columns: 1fr;
   }
   .recentOrders {
-    overflow-x: auto; 
+    overflow-x: auto;
   }
   .status.inProgress {
-    white-space: nowrap; 
+    white-space: nowrap;
   }
 }
 
-@media (max-width:  480px) {
+@media (max-width: 480px) {
   .cardBox {
-    display: grid; 
-    grid-template-columns: repeat(1,  1fr); 
+    grid-template-columns: repeat(1, 1fr);
   }
   .cardHeader h2 {
-    font-size:  20px; 
+    font-size: 20px;
   }
   .user {
-    min-width:  40px; 
+    min-width: 40px;
   }
   .navigation {
-    width:  100%; 
-    left: -100%; 
-    z-index:  1000; 
-    transition: left  0.5s ease; 
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
   }
   .navigation.active {
-    left:  0; 
+    width: 100%;
+    left: 0;
   }
   .toggle {
-    z-index:  10001; 
+    z-index: 10001;
   }
   .main.active .toggle {
-    color: #fff; 
-    position: fixed; 
-    right:  0; 
-    left: initial; 
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
   }
-}
-
-@media (max-width:  600px) {
-  .cardBox {
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(200px,  1fr)); 
-    gap:  20px; 
-    margin-left:  20px;
-    margin-right:  20px;
-  }
-
-  .card {
-    width:  auto;
-    margin-bottom:  20px;
-  }
-
-  .card:hover {
-    border-color: #D8F8F8; 
-    box-shadow: 0 8px 16px rgba(77, 209, 232, 0.3); 
-  }
-  
-  .card:hover .card-content {
-    transform: translateY(-10px); 
-  }
-  
-  .card-content {
-    transition: transform 0.3s ease; 
-
-  .image {
-    height:  220px; 
-  }
-
-  .cardText p {
-    font-size:  16px; 
-  }
-}
-
 }

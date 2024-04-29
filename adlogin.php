@@ -5,7 +5,7 @@ if(isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM admin WHERE username='$username' && password='$password' ";
+    $query = "SELECT * FROM hospital WHERE username='$username' && password='$password' ";
     $data = mysqli_query($conn, $query);
     $total = mysqli_num_rows($data);
 
@@ -45,8 +45,7 @@ if(isset($_POST['login'])) {
         <input type="password" id="password" name="password" placeholder="Enter password" required>
       </div>
       <div class="form-group">
-        <label><input type="checkbox"> Remember me</label>
-        <a href="#forgot_password.html" class="forgot-password?" target="_blank">Forgot Password?</a>
+      
       </div>
       <button type="submit" name="login" class="login-btn">Login</button>
     </form>
